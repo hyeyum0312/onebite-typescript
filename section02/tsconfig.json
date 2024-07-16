@@ -5,7 +5,8 @@
         "outDir": "dist",
         "strict": true,
         "moduleDetection": "force", // 개별모듈 취급,
-        "strictNullChecks": false
+        "strictNullChecks": false,
+        "skipLibCheck": true
     },
     "ts-node": {
         "esm": true
