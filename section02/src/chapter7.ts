@@ -29,6 +29,7 @@ function func4(): never {
     throw new Error();
 }
 
+let anyVar;
 let b: never; // undefined만 반환이 가능합니다.
 // b = 1; 에러
 // b = "hello"; 에러
