@@ -2,7 +2,7 @@
 // 제외하다, 추방하다
 // T에서 U를 제거하는 타입
 type Exclude<T, U> = T extends U ? never : T;
-// 1. 단계
+// 1단계
 // Exclude<string,boolean>
 // Exclude<boolean,boolean> // extends관계가 성립
 
