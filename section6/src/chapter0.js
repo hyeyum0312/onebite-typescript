@@ -32,7 +32,7 @@ class Student {
     grade;
 
     // 생성자 : 실제로 객체를 만드는 메서드 , constructor
-    constructor(name, grad, age) {
+    constructor(name, grade, age) {
         this.name = name;
         this.grade = grade;
         this.age = age;
@@ -69,7 +69,7 @@ class StudentDeveloper extends Student {
 
     // 생성자
     constructor(name, grade, age, favoriteSkill) {
-        super(name, grage, age); // 부모클래스 슈퍼클래스의 생성자가 선택이된다.
+        super(name, grade, age); // 부모클래스 슈퍼클래스의 생성자가 선택이된다.
         this.favoriteSkill = favoriteSkill;
     }
 
@@ -86,3 +86,23 @@ class StudentDeveloper extends Student {
 
 const studentDeveloper = new StudentDeveloper("투투", "B", "20", "Javascript");
 console.log(studentDeveloper);
+
+//프로토타입 연습
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.speak = function () {
+    console.log(this.name + " makes a noise.");
+};
+
+function Dog(name) {
+    Animal.call(this, name); // Animal 생성자 함수 호출
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.speak = function () {
+    console.log(this.name + " barks.");
+};
